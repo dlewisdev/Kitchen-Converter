@@ -22,11 +22,11 @@ public class App {
             }
             if (endingMeasurement == 2) {
                 finalOutput = tbs.toTsp();
-                System.out.println("Conversion: " + finalOutput);
+                System.out.println("Conversion: " + finalOutput + " teaspoons");
             }
             if (endingMeasurement == 3) {
                 finalOutput = tbs.toCup();
-                System.out.println("Conversion: " + finalOutput);
+                System.out.println("Conversion: " + finalOutput + " cups");
             }
         }
 
@@ -37,11 +37,11 @@ public class App {
             }
             if (endingMeasurement == 1) {
                 finalOutput = tsp.toTbs();
-                System.out.println("Conversion: " + finalOutput);
+                System.out.println("Conversion: " + finalOutput + " tablespoons");
             }
             if (endingMeasurement == 3) {
                 finalOutput = tsp.toCups();
-                System.out.println("Conversion: " + finalOutput);
+                System.out.println("Conversion: " + finalOutput + " cups");
             }
         }
 
@@ -53,11 +53,11 @@ public class App {
             }
             if (endingMeasurement == 1) {
                 finalOutput = cup.toTbs();
-                System.out.println("Conversion: " + finalOutput);
+                System.out.println("Conversion: " + finalOutput + " tablespoons");
             }
             if (endingMeasurement == 2) {
                 finalOutput = cup.toTsp();
-                System.out.println("Conversion: " + finalOutput);
+                System.out.println("Conversion: " + finalOutput + " teaspoons");
             }
         }
         
