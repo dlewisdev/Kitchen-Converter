@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-import javax.annotation.processing.SupportedOptions;
-
 public class App {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -16,18 +14,52 @@ public class App {
         int endingMeasurement = Integer.valueOf(scanner.nextLine());
 
         double finalOutput = 0;
-        //Tbs conversions
+
         if (startingMeasurement == 1) {
-            //Tbs to Tsp
-            if (endingMeasurement == 2) {
-                finalOutput = startingQuantity * 3;
+            Tablespoon tbs = new Tablespoon(startingQuantity);
+            if (endingMeasurement == 1) {
+                System.out.println("Error: Cannot convert to same unit");
             }
-            //Tbs to Cup
+            if (endingMeasurement == 2) {
+                finalOutput = tbs.toTsp();
+                System.out.println("Conversion: " + finalOutput);
+            }
             if (endingMeasurement == 3) {
-                finalOutput = (double) startingQuantity * 0.0625;
+                finalOutput = tbs.toCup();
+                System.out.println("Conversion: " + finalOutput);
             }
         }
 
-        System.out.println("Conversion: " + finalOutput);
+        if (startingMeasurement == 2) {
+            Teaspoon tsp = new Teaspoon(startingQuantity);
+            if (endingMeasurement == 2) {
+                System.out.println("Error: Cannot convert to same unit");
+            }
+            if (endingMeasurement == 1) {
+                finalOutput = tsp.toTbs();
+                System.out.println("Conversion: " + finalOutput);
+            }
+            if (endingMeasurement == 3) {
+                finalOutput = tsp.toCups();
+                System.out.println("Conversion: " + finalOutput);
+            }
+        }
+
+        if (startingMeasurement == 3) {
+            Cup cup = new Cup(startingQuantity) ;
+
+            if (endingMeasurement == 3) {
+                System.out.println("Error: Cannot convert to same unit");
+            }
+            if (endingMeasurement == 1) {
+                finalOutput = cup.toTbs();
+                System.out.println("Conversion: " + finalOutput);
+            }
+            if (endingMeasurement == 2) {
+                finalOutput = cup.toTsp();
+                System.out.println("Conversion: " + finalOutput);
+            }
+        }
+        
     }
 }
